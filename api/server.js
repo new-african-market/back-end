@@ -6,9 +6,13 @@ const server = express();
 //What will be seen when accessing API in heroku
 
 server.get('/', (req, res) => {
-    res.status(200).send(
-        "<h1>Welcome to the African Marketplace Backend</h1>"
-    )
+    server.get('/', (req, res) => {
+        res.status(200).json({api: 'up'})
+    })
+
+    // res.status(200).send(
+    //     "<h1>Welcome to the African Marketplace Backend</h1>"
+    // )
 });
 
 //export default server;
