@@ -1,17 +1,20 @@
 //Imports
 const express = require('express'); 
 const cors = require('cors');
+const helmet = require('helmet');
 
-//Routers
+//Routers --> api crud operation files
 
 //Server = express framework
 const server = express();
 
-//Server use ...
+//Server use --> tells user to use imports and how
 server.use(express.json());
 server.use(cors());
+server.use(helmet());
 
-//Server Routes
+//Server Routes --> tell server what paths to use
+
 
 //What will be seen when the API is accessed
 server.get('/', (req, res) => {
