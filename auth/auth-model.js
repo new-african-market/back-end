@@ -13,7 +13,7 @@ module.exports = {
 function findById(id) {
     return db('users')
         .where({ id })
-        .first
+        .first()
 };
 
 //Add new user

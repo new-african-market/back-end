@@ -4,10 +4,10 @@ const jwt = require('jsonwebtoken');
 const secrets = require('../config/secrets');
 
 //import user model & assign to variable
-User = require('./auth-model')
+Users = require('./auth-model')
 
 /*********** REGISTRATION  ***********/
-router.post('/signup'), (req, res) => {
+router.post('/signup', (req, res) => {
     let user = req.body;
 
     //custom validation messages for front-end
@@ -37,7 +37,7 @@ router.post('/signup'), (req, res) => {
             console.log("User Registration", err)
             return res.status(500).json({ message: `Could not add user` });
         })
-}
+})
 
 /*********** LOGIN  ***********/
 router.post('/login', (req, res) => {
@@ -85,3 +85,5 @@ function generateToken(user) {
     //Three part token signature
     return jwt.sign(payload, secrets.jwtSecret, options)
 }
+
+module.exports = router;

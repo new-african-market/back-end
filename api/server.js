@@ -4,16 +4,16 @@ const cors = require('cors');
 const helmet = require('helmet');
 
 //Routers --> api crud operation files
-const authenticate = require('../auth/auth-middleware');
+// const authenticate = require('../auth/auth-middleware');
 const authRouter = require('../auth/auth-router');
 
 //Server = express framework
 const server = express();
 
 //Server use --> tells user to use imports and how
-server.use(express.json());
-server.use(cors());
 server.use(helmet());
+server.use(cors());
+server.use(express.json());
 
 //Server Routes --> tell server what paths to use
 server.use('/api', authRouter);
