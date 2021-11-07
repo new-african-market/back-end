@@ -1,7 +1,7 @@
 const db = require('../database/db-config');
 
 module.exports = {
-    add,
+    addUser,
     find,
     findBy,
     findById,
@@ -17,7 +17,7 @@ function findById(id) {
 };
 
 //Add new user
-function add(user) {
+function addUser(user) {
     return db('users')
         .insert(user, 'id')
         .then(ids => {
